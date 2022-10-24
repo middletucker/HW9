@@ -3,7 +3,10 @@
 
 using namespace std;
 
+void printMatrix(double matrix[][7], int R, int C);
+
 int main() {
+  int R = 5, C = 7;
   double studentGrade[60][7] = {{1, 100, 100, 100, 100},
                                 {2, 100, 0, 100, 0},
                                 {3, 82, 94, 73, 86},
@@ -19,5 +22,17 @@ int main() {
           (studentGrade[i][1] * .2) + (studentGrade[i][2] * .3) +
           (studentGrade[i][2] * .3) + (studentGrade[i][4] * .2);
     }
+  }
+
+  printMatrix(studentGrade, R, C);
+}
+
+void printMatrix(double matrix[][7], int R, int C) {
+  int row, col;
+  for (row = 0; row < R; row++) {
+    for (col = 0; col < C; col++)
+      cout << setw(6) << matrix[row][col] << " ";
+
+    cout << endl;
   }
 }
