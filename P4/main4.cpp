@@ -21,14 +21,18 @@ int main() {
       {27, 19, 59},   {17, 13, 27}};
 
   printMatrix_3col(AirQuality_Index, n_rows, city_col);
+  cout << endl;
 
   // Determine and print unhealthy air index for each city
   G_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 0);
-  cout << G_Result << endl;
   F_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 1);
-  cout << F_Result << endl;
   D_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 2);
-  cout << D_Result << endl;
+
+  cout
+      << "From 10/4/2020 to 10/13/2020, the unhealthy air quality count in: \n";
+  cout << "Grand Junction: " << G_Result << endl;
+  cout << "Fort Collins: " << F_Result << endl;
+  cout << "Denver/Boulder: " << D_Result << endl;
   cout << endl;
 
   // Determine and print average air index
