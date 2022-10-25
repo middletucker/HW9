@@ -24,7 +24,7 @@ int main() {
       // Column8(studentGrade, i, j);
     }
   }
-  Column8(studentGrade, 5, 8);
+  Column8(studentGrade, 5, 4);
   printMatrix(studentGrade, 5, 8);
 }
 
@@ -32,7 +32,7 @@ void printMatrix(double matrix[][8], int R, int C) {
   int row, col;
   for (row = 0; row < R; row++) {
     for (col = 0; col < C; col++)
-      cout << setw(6) << matrix[row][col] << " ";
+      cout << setw(6) << setprecision(3) << matrix[row][col] << " ";
 
     cout << endl;
   }
@@ -42,12 +42,13 @@ void Column8(double matrix[][8], int R, int C) {
   int lowest;
   for (int i = 0; i < R; i++) {
     for (int j = 1; j < C; j++) {
-      if (matrix[i][C] <= lowest) {
-        lowest = matrix[i][C];
+      if (matrix[i][j] < lowest) {
+        lowest = matrix[i][j];
       }
     }
+    cout << lowest << endl;
     matrix[i][7] =
-        (matrix[i][1] + matrix[i][2] + matrix[i][2] + matrix[i][4] - lowest) /
-        4;
+        (matrix[i][1] + matrix[i][2] + matrix[i][3] + matrix[i][4] - lowest) /
+        3;
   }
 }
