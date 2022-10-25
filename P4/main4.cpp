@@ -14,7 +14,7 @@ int meanAirQualityIndex(int matrix[][3], int N_ROWS, int C);
 int main() {
   const int n_rows = 10;
   const int city_col = 3;
-  int G_Avg = 0, F_Avg, D_Avg, G_Result, F_Result, D_Result;
+  int G_Avg = 0, F_Avg = 0, D_Avg = 0, G_Result = 0, F_Result = 0, D_Result = 0;
   int AirQuality_Index[n_rows][city_col] = {
       {50, 68, 58},   {58, 115, 78}, {62, 110, 81}, {66, 124, 110},
       {64, 152, 121}, {46, 143, 90}, {46, 143, 90}, {25, 91, 91},
@@ -61,11 +61,10 @@ void printMatrix_3col(int matrix[][3], int N_ROWS, int C) {
 int CountUnhealthySensitive(int matrix[][3], int N_ROWS, int C) {
   int row, col, count = 0, unhealthy_level = 101;
   for (row = 0; row < N_ROWS; row++) {
-    
-      if (matrix[row][C] >= unhealthy_level) {
-        count++;
-      }
-    
+
+    if (matrix[row][C] >= unhealthy_level) {
+      count++;
+    }
   }
   return count;
 }
@@ -74,10 +73,13 @@ int meanAirQualityIndex(int matrix[][3], int N_ROWS, int C) {
   int sum = 0;
   int avg = 0;
 
-  for (int i = 0; i < N_ROWS; i++)
+  for (int i = 0; i < N_ROWS; i++) {
     sum = sum + matrix[i][C];
+    cout << matrix[i][C] << "    ";
+  }
 
   avg = sum / N_ROWS;
-
+  // cout << sum << endl;
+  // cout << avg << endl;
   return avg;
 }
