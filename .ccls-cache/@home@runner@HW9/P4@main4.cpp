@@ -6,9 +6,9 @@
 using namespace std;
 
 // function prototypes
-void printMatrix_3col(int matrix[][3], int N_ROWS, int C);
-int CountUnhealthySensitive(int matrix[][3], int N_ROWS, int C);
-int meanAirQualityIndex(int matrix[][3], int N_ROWS, int C);
+void printMatrix_3col(int matrix[][3], int, int);
+int CountUnhealthySensitive(int matrix[][3], int, int);
+int meanAirQualityIndex(int matrix[][3], int, int);
 
 ////////////////////// MAIN ///////////////////////////////////////
 int main() {
@@ -23,18 +23,18 @@ int main() {
   printMatrix_3col(AirQuality_Index, n_rows, city_col);
 
   // Determine and print unhealthy air index for each city
-  G_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 1);
+  G_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 0);
   cout << G_Result << endl;
-  F_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 2);
+  F_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 1);
   cout << F_Result << endl;
-  D_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 3);
+  D_Result = CountUnhealthySensitive(AirQuality_Index, n_rows, 2);
   cout << D_Result << endl;
   cout << endl;
 
   // Determine and print average air index
-  G_Avg = meanAirQualityIndex(AirQuality_Index, n_rows, 1);
-  F_Avg = meanAirQualityIndex(AirQuality_Index, n_rows, 2);
-  D_Avg = meanAirQualityIndex(AirQuality_Index, n_rows, 3);
+  G_Avg = meanAirQualityIndex(AirQuality_Index, n_rows, 0);
+  F_Avg = meanAirQualityIndex(AirQuality_Index, n_rows, 1);
+  D_Avg = meanAirQualityIndex(AirQuality_Index, n_rows, 2);
 
   cout << "From 10/4/2020 to 10/13/2020, the averge air quality in: \n";
   cout << "Grand Junction: " << G_Avg << endl;
@@ -71,15 +71,13 @@ int CountUnhealthySensitive(int matrix[][3], int N_ROWS, int C) {
 
 int meanAirQualityIndex(int matrix[][3], int N_ROWS, int C) {
   int sum = 0;
-  int avg = 0;
+  int row, avg = 0;
 
-  for (int i = 0; i < N_ROWS; i++) {
-    sum = sum + matrix[i][C];
-    cout << matrix[i][C] << "    ";
+  for (row = 0; row < N_ROWS; row++) {
+    sum = sum + matrix[row][C];
   }
 
   avg = sum / N_ROWS;
-  // cout << sum << endl;
-  // cout << avg << endl;
+
   return avg;
 }
