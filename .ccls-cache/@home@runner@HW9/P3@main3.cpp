@@ -21,12 +21,22 @@ int main() {
   grades[5] = TrueFalse(tests, 5, 5);
 
   for (int i = 0; i < 6; i++) {
-    cout << setw(6) << setprecision(3) << grades[i];
+    cout << setw(10) << "Student " << i + 1;
+  }
+  cout << endl;
+  for (int i = 0; i < 6; i++) {
+    cout << setw(10) << setprecision(3) << grades[i];
+  }
+  cout << endl;
+
+  for (int i = 0; i < 6; i++) {
+    cout << setw(10) << "Student " << i + 1;
+    cout << setw(10) << setprecision(3) << grades[i] << endl;
   }
 }
 int TrueFalse(char matrix[][5], int R, int C) {
   double count = 0, grade = 0;
-  
+
   for (int j = 0; j < C; j++) {
     if (matrix[R][j] == 'T') {
       count = count + 5;
