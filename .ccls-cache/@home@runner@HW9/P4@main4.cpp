@@ -1,5 +1,9 @@
 /******************************************************************************
- CSCI 130: Sample code taken from Dr. Mellenthin
+Lillian Tucker
+CSCI130
+10/25/2022
+Description: 
+Sample code taken from Dr. Mellenthin
 
 *******************************************************************************/
 #include <iomanip>
