@@ -10,12 +10,12 @@ void printMatrix(double matrix[][2], int, int);
 
 int main() {
   double D;
-  double Matrix[2][2] = {{1, 1}, {1, 1}},
+  double Matrix[2][2] = {{4, 2}, {4, 2}},
          inverseMatrix[2][2] = {{0, 0}, {0, 0}};
 
   D = Determinant(Matrix);
 
-  cout << "Test Case 1: \n";
+  cout << "Test Case 3: \n";
 
   if (D != 0) {
     Adjoint(Matrix, inverseMatrix);

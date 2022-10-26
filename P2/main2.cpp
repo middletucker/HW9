@@ -45,8 +45,6 @@ void Column8(double matrix[][8], int R, int C) {
       if (matrix[i][j] < lowest) {
         lowest = matrix[i][j];
       }
-
-      cout << lowest << endl;
     }
 
     matrix[i][7] =

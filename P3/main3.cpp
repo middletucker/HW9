@@ -27,7 +27,7 @@ int main() {
   for (int i = 0; i < 6; i++) {
     cout << setw(10) << setprecision(3) << grades[i];
   }
-  cout << endl;
+  cout << endl << endl;
 
   for (int i = 0; i < 6; i++) {
     cout << setw(10) << "Student " << i + 1;
